@@ -16,7 +16,7 @@ def create
   @recipe = Recipe.new(recipe_params)
 
   if @recipe.save
-    redirect_to @recipe, notice: "successfully created new recipe"
+    redirect_to @recipe, notice: "Successfully created new recipe"
   else
     render 'new'
   end
@@ -35,7 +35,7 @@ end
 
 def destroy
   @recipe.destroy
-  redirect_to root_path, notice: "successfully deleted recipe"
+  redirect_to root_path, notice: "Successfully deleted recipe"
 end
 
 private
