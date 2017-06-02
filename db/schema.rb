@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20170502193826) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "directions", force: :cascade do |t|
     t.text     "step"
     t.integer  "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["recipe_id"], name: "index_directions_on_recipe_id"
+    t.index ["recipe_id"], name: "index_directions_on_recipe_id", using: :btree
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170502193826) do
     t.integer  "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id", using: :btree
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -40,4 +43,6 @@ ActiveRecord::Schema.define(version: 20170502193826) do
     t.datetime "image_updated_at"
   end
 
+  add_foreign_key "directions", "recipes"
+  add_foreign_key "ingredients", "recipes"
 end
