@@ -1,6 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('recipebox1'),
+    access_key_id: ENV.fetch('AKIAI26D5Y2I6PZJJUVQ'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('us-standard'),
+  }
+}
   # Code is not reloaded between requests.
   config.cache_classes = true
 
