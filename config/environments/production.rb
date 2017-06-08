@@ -6,7 +6,7 @@ Rails.application.configure do
     bucket: ENV.fetch('recipebox2'),
     access_key_id: ENV.fetch('AKIAJC7V6PZQAAFBSIYA'),
     secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('Ohio'),
+    s3_region: ENV.fetch('ohio'),
   }
 }
   # Code is not reloaded between requests.
