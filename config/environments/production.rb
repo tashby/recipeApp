@@ -3,10 +3,10 @@ Rails.application.configure do
   config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV.fetch('recipebox1'),
-    access_key_id: ENV.fetch('AKIAI26D5Y2I6PZJJUVQ'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-standard'),
+    bucket: ENV.fetch('recipebox2'),
+    access_key_id: ENV.fetch('AKIAJC7V6PZQAAFBSIYA'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('Ohio'),
   }
 }
   # Code is not reloaded between requests.
